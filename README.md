@@ -1,45 +1,39 @@
 # Linear Recurrent Units for Sequential Recommendation
 
-This is our pytorch impelementation for the paper:
+This repository is the PyTorch impelementation for the paper:
 
-Zhenrui Yue*, Yueqi Wang*, Zhankui He^, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint
+**Linear Recurrent Units for Sequential Recommendation [[Paper](media/paper.pdf)]**
 
-<img src="https://github.com/yueqirex/LRURec/blob/master/overall_model_arch.png?raw=true" alt="Overall LRURec architecture" width="900">
+Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint
+
+<img src=media/overall_model_arch.png width=1000>
+
 
 ## Requirements
 
 Numpy, pandas, pytorch etc. For our detailed running environment see requirements.txt
 
-## How to run LRURec for each dataset
-Below specifies running LRURec for each dataset with optimal args.
-For beauty:
+
+## How to run LRURec
+The command below specifies the training of LRURec on MovieLens-1M.
 ```bash
-python train.py --dataset_code=beauty --bert_dropout=0.6 --bert_attn_dropout=0.6 --weight_decay=1e-2
-```
-For video:
-```bash
-python train.py --dataset_code=video --bert_dropout=0.6 --bert_attn_dropout=0.6 --weight_decay=1e-2
-```
-For sports:
-```bash
-python train.py --dataset_code=sports --bert_dropout=0.6 --bert_attn_dropout=0.6 --weight_decay=1e-2
-```
-For steam:
-```bash
-python train.py --dataset_code=steam --bert_dropout=0.2 --bert_attn_dropout=0.2 --weight_decay=1e-2
-```
-For ml-1m:
-```bash
-python train.py --dataset_code=ml-1m --bert_dropout=0.2 --bert_attn_dropout=0.2 --weight_decay=1e-2
+python train.py --dataset_code=ml-1m
 ```
 
 Excecute the above command (with arguments) to train LRURec, select dataset_code from ml-1m, beauty, video, sports, steam and xlong. XLong must be downloaded separately and put under ./data/xlong for experiments. Once trainin is finished, evaluation is automatically performed with models and results saved in ./experiments.
 
 
+## Performance
+
+The table below reports our main performance results, with best results marked in bold and second best results underlined. For training and evaluation details, please refer to our paper.
+
+<img src=media/performance.png width=1000>
+
+
 ## Citation
-If you find this code base or the original work of LRURec useful, please cite:
+Please consider citing the following papers if you use our methods in your research:
 ```bib
-@article{yue2023linearrecurrent,
+@article{yue2023linear,
   title={Linear Recurrent Units for Sequential Recommendation},
   author={Zhenrui Yue, Yueqi Wang, Zhankui He, Huimin Zeng, Julian McAuley and Dong Wang},
   journal={arXiv preprint arXiv},
