@@ -4,7 +4,7 @@ This is our pytorch impelementation for the paper:
 
 Zhenrui Yue*, Yueqi Wang*, Zhankui He^, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint
 
-<img src="https://github.com/yueqirex/LRURec/blob/main/overall_model_arch.png?raw=true" alt="Overall LRURec architecture" width="900">
+<img src="https://github.com/yueqirex/LRURec/blob/master/overall_model_arch.png?raw=true" alt="Overall LRURec architecture" width="900">
 
 ## Requirements
 
