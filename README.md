@@ -2,9 +2,9 @@
 
 This repository is the PyTorch impelementation for the paper:
 
-**Linear Recurrent Units for Sequential Recommendation [[Paper](media/paper.pdf)]**
+**Linear Recurrent Units for Sequential Recommendation [[Paper](https://browse.arxiv.org/pdf/2310.02367.pdf)][[Code](https://github.com/yueqirex/lrurec)]** (BibTex citation at the bottom)
 
-Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint
+Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint:2310.02367
 
 <img src=media/overall_model_arch.png width=1000>
 
@@ -35,8 +35,8 @@ Please consider citing the following papers if you use our methods in your resea
 ```bib
 @article{yue2023linear,
   title={Linear Recurrent Units for Sequential Recommendation},
-  author={Zhenrui Yue, Yueqi Wang, Zhankui He, Huimin Zeng, Julian McAuley and Dong Wang},
-  journal={arXiv preprint arXiv},
+  author={Yue, Zhenrui and Wang, Yueqi and He, Zhankui and Zeng, Huimin and McAuley, Julian and Wang, Dong},
+  journal={arXiv preprint arXiv:2310.02367},
   year={2023}
 }
 ```
