@@ -1,10 +1,10 @@
 # Linear Recurrent Units for Sequential Recommendation
 
-This repository is the PyTorch impelementation for the paper:
+This repository is the PyTorch impelementation for WSDM 2024 paper:
 
 **Linear Recurrent Units for Sequential Recommendation [[Paper](https://browse.arxiv.org/pdf/2310.02367.pdf)][[Code](https://github.com/yueqirex/lrurec)]** (BibTex citation at the bottom)
 
-Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang (2023). Linear Recurrent Units for Sequential Recommendation. arXiv preprint:2310.02367
+Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang. Linear Recurrent Units for Sequential Recommendation.
 
 <img src=media/overall_model_arch.png width=1000>
 
@@ -31,7 +31,7 @@ The table below reports our main performance results, with best results marked i
 
 
 ## Citation
-Please consider citing the following papers if you use our methods in your research:
+Please consider citing the following paper if you use our methods in your research:
 ```bib
 @article{yue2023linear,
   title={Linear Recurrent Units for Sequential Recommendation},
