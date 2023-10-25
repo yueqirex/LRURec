@@ -29,29 +29,27 @@ class ML1MDataset(AbstractDataset):
 
     @classmethod
     def all_raw_file_names(cls):
-        return ['README',
-                'movies.dat',
-                'ratings.dat',
-                'users.dat']
+        return ['ml-1m.txt']
 
     def maybe_download_raw_dataset(self):
-        folder_path = self._get_rawdata_folder_path()
-        if folder_path.is_dir() and\
-           all(folder_path.joinpath(filename).is_file() for filename in self.all_raw_file_names()):
-            print('Raw data already exists. Skip downloading')
-            return
-        
-        print("Raw file doesn't exist. Downloading...")
-        tmproot = Path(tempfile.mkdtemp())
-        tmpzip = tmproot.joinpath('file.zip')
-        tmpfolder = tmproot.joinpath('folder')
-        download(self.url(), tmpzip)
-        unzip(tmpzip, tmpfolder)
-        if self.zip_file_content_is_folder():
-            tmpfolder = tmpfolder.joinpath(os.listdir(tmpfolder)[0])
-        shutil.move(tmpfolder, folder_path)
-        shutil.rmtree(tmproot)
-        print()
+        pass
+
+    def split_df(self, df, user_count):
+        if self.args.split == 'leave_one_out':
+            print('Splitting')
+            user_group = df.groupby('uid')
+            user2items = df.groupby('uid').progress_apply(lambda d: list(d['sid']))
+            train, val, test = {}, {}, {}
+            for i in range(user_count):
+                user = i + 1
+                items = user2items[user]
+                if len(items) < 3:
+                    train[user], val[user], test[user] = items, [], []
+                else:
+                    train[user], val[user], test[user] = items[:-2], items[-2:-1], items[-1:]
+            return train, val, test
+        else:
+            raise NotImplementedError
 
     def preprocess(self):
         dataset_path = self._get_preprocessed_dataset_path()
@@ -63,7 +61,7 @@ class ML1MDataset(AbstractDataset):
         self.maybe_download_raw_dataset()
         df = self.load_ratings_df()
         df = self.remove_immediate_repeats(df)
-        df = self.filter_triplets(df)
+        # df = self.filter_triplets(df)
         df, umap, smap = self.densify_index(df)
         train, val, test = self.split_df(df, len(umap))
         
@@ -77,7 +75,7 @@ class ML1MDataset(AbstractDataset):
 
     def load_ratings_df(self):
         folder_path = self._get_rawdata_folder_path()
-        file_path = folder_path.joinpath('ratings.dat')
-        df = pd.read_csv(file_path, sep='::', header=None)
-        df.columns = ['uid', 'sid', 'rating', 'timestamp']
+        file_path = folder_path.joinpath('ml-1m.txt')
+        df = pd.read_csv(file_path, header=None, sep=' ')
+        df.columns = ['uid', 'sid']
         return df

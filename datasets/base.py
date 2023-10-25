@@ -91,21 +91,6 @@ class AbstractDataset(metaclass=ABCMeta):
         df['sid'] = df['sid'].map(smap)
         return df, umap, smap
 
-    def split_df(self, df, user_count):
-        if self.args.split == 'leave_one_out':
-            print('Splitting')
-            user_group = df.groupby('uid')
-            user2items = user_group.progress_apply(
-                lambda d: list(d.sort_values(by=['timestamp', 'sid'])['sid']))
-            train, val, test = {}, {}, {}
-            for i in range(user_count):
-                user = i + 1
-                items = user2items[user]
-                train[user], val[user], test[user] = items[:-2], items[-2:-1], items[-1:]
-            return train, val, test
-        else:
-            raise NotImplementedError
-
     def _get_rawdata_root_path(self):
         return Path(RAW_DATASET_ROOT_FOLDER)
 
