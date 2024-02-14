@@ -33,10 +33,15 @@ The table below reports our main performance results, with best results marked i
 ## Citation
 Please consider citing the following paper if you use our methods in your research:
 ```bib
-@article{yue2023linear,
-  title={Linear Recurrent Units for Sequential Recommendation},
-  author={Yue, Zhenrui and Wang, Yueqi and He, Zhankui and Zeng, Huimin and McAuley, Julian and Wang, Dong},
-  journal={arXiv preprint arXiv:2310.02367},
-  year={2023}
+@inproceedings{yue2024linear,
+author={Yue, Zhenrui and Wang, Yueqi and He, Zhankui and Zeng, Huimin and McAuley, Julian and Wang, Dong},
+title = {Linear Recurrent Units for Sequential Recommendation},
+year = {2024},
+booktitle = {Proceedings of the Seventeenth ACM International Conference on Web Search and Data Mining},
+series = {WSDM '24}
 }
+
 ```
+
+
+
