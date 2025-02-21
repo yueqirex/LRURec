@@ -2,7 +2,7 @@
 
 This repository is the PyTorch implementation for WSDM 2024 paper:
 
-**Linear Recurrent Units for Sequential Recommendation [[Paper](https://browse.arxiv.org/pdf/2310.02367.pdf)][[Code](https://github.com/yueqirex/lrurec)]** (BibTex citation at the bottom)
+**Linear Recurrent Units for Sequential Recommendation [[Paper](https://dl.acm.org/doi/10.1145/3616855.3635760)][[Code](https://github.com/yueqirex/lrurec)]** (BibTex citation at the bottom)
 
 Zhenrui Yue*, Yueqi Wang*, Zhankui He†, Huimin Zeng, Julian McAuley, Dong Wang. Linear Recurrent Units for Sequential Recommendation.
 
